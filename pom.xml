@@ -189,5 +189,6 @@
     <scm>
         <developerConnection>scm:git:https://github.com/wan2dev/ktuple.git</developerConnection>
         <connection>scm:git:https://github.com/wan2dev/ktuple.git</connection>
+        <url>https://github.com/wan2dev/ktuple</url>
     </scm>
 </project>
