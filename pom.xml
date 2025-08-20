@@ -95,43 +95,13 @@
 
             <!-- 发布版本插件 -->
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-release-plugin</artifactId>
-                <version>3.1.1</version>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <version>0.8.0</version>
+                <extensions>true</extensions>
                 <configuration>
-                    <!--Tag版本号-->
-                    <tagNameFormat>v@{project.version}</tagNameFormat>
-                    <!--不校验版本管理状态的文件-->
-                    <checkModificationExcludes>
-                        <!--IDEA配置文件-->
-                        <checkModificationExclude>.idea/**/*</checkModificationExclude>
-                        <checkModificationExclude>*.iml</checkModificationExclude>
-                        <!--Eclipse配置文件-->
-                        <checkModificationExclude>.settings/**/*</checkModificationExclude>
-                        <checkModificationExclude>.project</checkModificationExclude>
-                        <checkModificationExclude>.classpath</checkModificationExclude>
-                    </checkModificationExcludes>
+                    <publishingServerId>central</publishingServerId>
                 </configuration>
-            </plugin>
-
-            <!-- 自动配合git进行版本发布 -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-scm-plugin</artifactId>
-                <version>2.1.0</version>
-                <configuration>
-                    <connectionType>connection</connectionType>
-                    <providerImplementations>
-                        <git>jgit</git>
-                    </providerImplementations>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.apache.maven.scm</groupId>
-                        <artifactId>maven-scm-provider-jgit</artifactId>
-                        <version>2.1.0</version>
-                    </dependency>
-                </dependencies>
             </plugin>
 
             <!--源码插件-->
