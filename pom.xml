@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.wan2dev</groupId>
     <artifactId>ktuple</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Kotlin Tuple</description>
     <url>https://github.com/wan2dev/ktuple</url>
@@ -203,6 +203,6 @@
         <developerConnection>scm:git:https://github.com/wan2dev/ktuple.git</developerConnection>
         <connection>scm:git:https://github.com/wan2dev/ktuple.git</connection>
         <url>https://github.com/wan2dev/ktuple</url>
-      <tag>v1.0.0</tag>
+      <tag>HEAD</tag>
   </scm>
 </project>
