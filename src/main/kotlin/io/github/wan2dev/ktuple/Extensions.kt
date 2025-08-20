@@ -2,7 +2,7 @@ package io.github.wan2dev.ktuple
 
 /**
  *
- * @author wanggj@thinkive.com
+ * @author w-sodalite@hotmail.com
  */
 fun Tuple.isEmpty() = this.size == 0
 fun Tuple.isNotEmpty() = this.size > 0

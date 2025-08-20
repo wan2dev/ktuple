@@ -2,7 +2,7 @@ package io.github.wan2dev.ktuple
 
 /**
  *
- * @author wanggj@thinkive.com
+ * @author w-sodalite@hotmail.com
  */
 object Tuple0 : Tuple {
     override val size: Int = 0

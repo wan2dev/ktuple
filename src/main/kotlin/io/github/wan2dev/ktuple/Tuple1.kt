@@ -2,7 +2,7 @@ package io.github.wan2dev.ktuple
 
 /**
  *
- * @author wanggj@thinkive.com
+ * @author w-sodalite@hotmail.com
  */
 data class Tuple1<out T1>(val first: T1) : Tuple {
     override val size: Int = 1

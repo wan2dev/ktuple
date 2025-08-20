@@ -2,7 +2,7 @@ package io.github.wan2dev.ktuple
 
 /**
  *
- * @author wanggj@thinkive.com
+ * @author w-sodalite@hotmail.com
  */
 interface Tuple {
     val size: Int

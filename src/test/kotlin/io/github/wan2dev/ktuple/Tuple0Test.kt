@@ -6,7 +6,7 @@ import kotlin.test.assertFalse
 
 /**
  *
- * @author wanggj@thinkive.com
+ * @author w-sodalite@hotmail.com
  */
 class Tuple0Test {
 

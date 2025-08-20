@@ -2,7 +2,7 @@ package io.github.wan2dev.ktuple
 
 /**
  *
- * @author wanggj@thinkive.com
+ * @author w-sodalite@hotmail.com
  */
 data class Tuple3<out T1, out T2, out T3>(val first: T1, val second: T2, val third: T3) :
     Tuple {

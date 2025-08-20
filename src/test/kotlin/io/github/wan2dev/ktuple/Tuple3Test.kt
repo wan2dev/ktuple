@@ -7,7 +7,7 @@ import kotlin.test.assertIs
 
 /**
  *
- * @author wanggj@thinkive.com
+ * @author w-sodalite@hotmail.com
  */
 class Tuple3Test {
 
