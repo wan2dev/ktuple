@@ -1,4 +1,4 @@
-package com.sodax.ktuple
+package io.github.wan2dev.ktuple
 
 data class Tuple2<out T1, out T2>(val first: T1, val second: T2) : Tuple {
     override val size: Int = 2

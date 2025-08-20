@@ -1,4 +1,4 @@
-package com.sodax.ktuple
+package io.github.wan2dev.ktuple
 
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -9,16 +9,16 @@ import kotlin.test.assertIs
  *
  * @author wanggj@thinkive.com
  */
-class Tuple2Test {
+class Tuple5Test {
 
-    val tuple = Tuple(1, 2)
+    val tuple = Tuple(1, 2, 3, 4, 5)
 
     @Test
     fun test() {
         assert(tuple.isNotEmpty())
         assertFalse(tuple.isEmpty())
         assertEquals(
-            2,
+            5,
             tuple.size
         )
         assertEquals(
@@ -30,28 +30,42 @@ class Tuple2Test {
             tuple.second
         )
         assertEquals(
-            "(1, 2)",
+            3,
+            tuple.third
+        )
+        assertEquals(
+            4,
+            tuple.fourth
+        )
+        assertEquals(
+            5,
+            tuple.fifth
+        )
+        assertEquals(
+            "(1, 2, 3, 4, 5)",
             tuple.toString()
         )
         assertEquals(
-            Tuple(1, 2, 3),
-            tuple.append(3)
+            Tuple(1, 2, 3, 4, 5, 6),
+            tuple.append(6)
         )
         assertEquals(
-            Tuple(2, 4),
-            tuple.map { first, second -> Tuple(first * 2, second * 2) }
+            Tuple(2, 4, 6, 8, 10),
+            tuple.map { first, second, third, fourth, fifth ->
+                Tuple(first * 2, second * 2, third * 2, fourth * 2, fifth * 2)
+            }
         )
         assertEquals(
-            3,
-            tuple { first, second -> first + second }
+            15,
+            tuple { first, second, third, fourth, fifth -> first + second + third + fourth + fifth }
         )
 
         val list = tuple.toList()
         val mlist: List<Any?> = tuple.toMutableList()
         val set = tuple.toSet()
         val mset: Set<Any?> = tuple.toMutableSet()
-        val elist = listOf(1, 2)
-        val eset = setOf(1, 2)
+        val elist = listOf(1, 2, 3, 4, 5)
+        val eset = setOf(1, 2, 3, 4, 5)
         assertEquals(elist, list)
         assertEquals(elist, mlist)
         assertEquals(eset, set)

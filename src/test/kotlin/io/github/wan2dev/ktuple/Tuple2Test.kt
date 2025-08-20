@@ -1,4 +1,4 @@
-package com.sodax.ktuple
+package io.github.wan2dev.ktuple
 
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -9,16 +9,16 @@ import kotlin.test.assertIs
  *
  * @author wanggj@thinkive.com
  */
-class Tuple4Test {
+class Tuple2Test {
 
-    val tuple = Tuple(1, 2, 3, 4)
+    val tuple = Tuple(1, 2)
 
     @Test
     fun test() {
         assert(tuple.isNotEmpty())
         assertFalse(tuple.isEmpty())
         assertEquals(
-            4,
+            2,
             tuple.size
         )
         assertEquals(
@@ -30,38 +30,28 @@ class Tuple4Test {
             tuple.second
         )
         assertEquals(
-            3,
-            tuple.third
-        )
-        assertEquals(
-            4,
-            tuple.fourth
-        )
-        assertEquals(
-            "(1, 2, 3, 4)",
+            "(1, 2)",
             tuple.toString()
         )
         assertEquals(
-            Tuple(1, 2, 3, 4, 5),
-            tuple.append(5)
+            Tuple(1, 2, 3),
+            tuple.append(3)
         )
         assertEquals(
-            Tuple(2, 4, 6, 8),
-            tuple.map { first, second, third, fourth ->
-                Tuple(first * 2, second * 2, third * 2, fourth * 2)
-            }
+            Tuple(2, 4),
+            tuple.map { first, second -> Tuple(first * 2, second * 2) }
         )
         assertEquals(
-            10,
-            tuple { first, second, third, fourth -> first + second + third + fourth }
+            3,
+            tuple { first, second -> first + second }
         )
 
         val list = tuple.toList()
         val mlist: List<Any?> = tuple.toMutableList()
         val set = tuple.toSet()
         val mset: Set<Any?> = tuple.toMutableSet()
-        val elist = listOf(1, 2, 3, 4)
-        val eset = setOf(1, 2, 3, 4)
+        val elist = listOf(1, 2)
+        val eset = setOf(1, 2)
         assertEquals(elist, list)
         assertEquals(elist, mlist)
         assertEquals(eset, set)

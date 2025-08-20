@@ -1,4 +1,4 @@
-package com.sodax.ktuple
+package io.github.wan2dev.ktuple
 
 /**
  *
@@ -15,26 +15,57 @@ data class Tuple5<out T1, out T2, out T3, out T4, out T5>(
 
     override fun toString() = "($first, $second, $third, $fourth, $fifth)"
 
-    fun <T6> append(value: T6) = Tuple(first, second, third, fourth, fifth, value)
+    fun <T6> append(value: T6) =
+        Tuple(first, second, third, fourth, fifth, value)
 
     fun <U1> map1(block: (T1) -> U1): Tuple5<U1, T2, T3, T4, T5> {
-        return Tuple(block(this.first), this.second, this.third, this.fourth, this.fifth)
+        return Tuple(
+            block(this.first),
+            this.second,
+            this.third,
+            this.fourth,
+            this.fifth
+        )
     }
 
     fun <U2> map2(block: (T2) -> U2): Tuple5<T1, U2, T3, T4, T5> {
-        return Tuple(this.first, block(this.second), this.third, this.fourth, this.fifth)
+        return Tuple(
+            this.first,
+            block(this.second),
+            this.third,
+            this.fourth,
+            this.fifth
+        )
     }
 
     fun <U3> map3(block: (T3) -> U3): Tuple5<T1, T2, U3, T4, T5> {
-        return Tuple(this.first, this.second, block(this.third), this.fourth, this.fifth)
+        return Tuple(
+            this.first,
+            this.second,
+            block(this.third),
+            this.fourth,
+            this.fifth
+        )
     }
 
     fun <U4> map4(block: (T4) -> U4): Tuple5<T1, T2, T3, U4, T5> {
-        return Tuple(this.first, this.second, this.third, block(this.fourth), this.fifth)
+        return Tuple(
+            this.first,
+            this.second,
+            this.third,
+            block(this.fourth),
+            this.fifth
+        )
     }
 
     fun <U5> map5(block: (T5) -> U5): Tuple5<T1, T2, T3, T4, U5> {
-        return Tuple(this.first, this.second, this.third, this.fourth, block(this.fifth))
+        return Tuple(
+            this.first,
+            this.second,
+            this.third,
+            this.fourth,
+            block(this.fifth)
+        )
     }
 
     fun <U1, U2, U3, U4, U5> map(block: (T1, T2, T3, T4, T5) -> Tuple5<U1, U2, U3, U4, U5>): Tuple5<U1, U2, U3, U4, U5> {
